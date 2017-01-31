@@ -13,4 +13,8 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 EXPOSE 22
 
+COPY endpoint.sh /
+COPY default /
+RUN chmod +x /*.sh
+
 ENTRYPOINT ["/endpoint.sh"]
